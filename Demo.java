@@ -1,4 +1,5 @@
 public class Demo{
+  //HW 9
   public static void printLoop(int n) {
     int i, j;
     for(i=0; i<n; i++){
@@ -9,7 +10,50 @@ public class Demo{
     }
   }
 
+//HW 10
+  public static String arrToString(int[] arr){
+    String OneDArray = "{";
+    if (arr.length == 0){
+      OneDArray="{}";
+    }
+    for (int i=0; i< arr.length; i++){
+      if (i == arr.length-1){
+        OneDArray= OneDArray + arr [i] +"}";
+      }
+      else{
+      OneDArray= OneDArray + arr [i] + ", ";
+      }
+    }
+    return OneDArray;
+  }
+
+
+  public static String arrayDeepToString(int[][]arr){
+    //int x=0; Test to see if my code was able to count every value in array.
+    String TwoDArray= "{";
+    for (int i=0; i< arr.length; i++ ){
+      for (int j=0;j<arr[i].length;j++){
+        //x+=1; Test to see if my code was able to count every value in array.
+        TwoDArray=TwoDArray+arr[i][j] + " ";
+      }
+    }
+    //return Integer.toString(x); Test to see if my code was able to count every value in array.
+    return TwoDArray;
+  }
+
+
   public static void main(String args[]){
+    // HW 10
+    int[][] arr= {
+       {1, 2, 3},
+       {4, 5, 6},
+       {7, 8, 9},
+       {10,11,12}
+    };
+
+    System.out.print (arrayDeepToString(arr));
+
+    //HW 9
     if (args.length == 0){
       int n=5;
       printLoop(n);
