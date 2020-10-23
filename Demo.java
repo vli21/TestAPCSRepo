@@ -10,6 +10,7 @@ public class Demo{
     }
   }
 
+
 //HW 10  Part2a
   public static String arrToString(int[] arr){
     String OneDArray = "{";
@@ -72,6 +73,19 @@ public class Demo{
     }
 
 
+    public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue){
+      int[][] Array2 = new int[rows][];
+
+      for(int i=0; i<rows; i++) {
+        Array2[i]= new int [(int) (Math.random() * (cols+1))];
+        for(int j=0; j<Array2[i].length; j++) {
+          int x = (int) (Math.random() * (maxValue+1));
+          Array2[i][j] = x;
+        }
+      }
+      return Array2;
+    }
+
 
   public static void main(String args[]){
     // HW 10 Part 2a
@@ -84,10 +98,11 @@ public class Demo{
 
     System.out.println (arrayDeepToString(arr));
     System.out.println (arrayDeepToString(arr).replace("}, ","},\n "));
-    System.out.println ((int )(Math.random() * 4));
+    //System.out.println ((int )(Math.random() * 4)); Testing to see if random function truly gave a random value
 
     //HW10 Part2b
-    System.out.println (arrayDeepToString(create2DArray(5,4,4)));
+    System.out.println (arrayDeepToString(create2DArray(5,4,4)).replace("}, ","},\n "));
+    System.out.println (arrayDeepToString(create2DArrayRandomized(6,4,4)).replace("}, ","},\n "));
 
 
     //HW 9
