@@ -34,7 +34,23 @@ public class Demo{
     for (int i=0; i< arr.length; i++ ){
       for (int j=0;j<arr[i].length;j++){
         //x+=1; Test to see if my code was able to count every value in array.
-        TwoDArray=TwoDArray+arr[i][j] + " ";
+        if (j==0){
+          TwoDArray=TwoDArray+ "{"+ arr[i][j]+",";
+        }
+        if (j!=0 && j!=arr.length-1){
+          TwoDArray=TwoDArray+ arr[i][j] + ",";
+        }
+        if (j==arr[i].length-1){
+          if (i !=arr.length-1){
+          TwoDArray=TwoDArray+ arr[i][j]+ "},";
+        }
+        else{
+        TwoDArray=TwoDArray+ "}";
+      }
+        }
+      }
+      if (i==arr.length-1){
+        TwoDArray=TwoDArray+ "}";
       }
     }
     //return Integer.toString(x); Test to see if my code was able to count every value in array.
@@ -51,7 +67,7 @@ public class Demo{
        {10,11,12}
     };
 
-    System.out.print (arrayDeepToString(arr));
+    System.out.println (arrayDeepToString(arr));
 
     //HW 9
     if (args.length == 0){
