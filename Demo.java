@@ -37,7 +37,7 @@ public class Demo{
         if (j==0){
           TwoDArray=TwoDArray+ "{"+ arr[i][j]+",";
         }
-        if (j!=0 && j!=arr.length-1){
+        if (j!=0 && j!=arr[i].length-1){
           TwoDArray=TwoDArray+ arr[i][j] + ",";
         }
         if (j==arr[i].length-1){
@@ -45,7 +45,7 @@ public class Demo{
           TwoDArray=TwoDArray+ arr[i][j]+ "}, ";
         }
         else{
-        TwoDArray=TwoDArray+ "}";
+        TwoDArray=TwoDArray+arr[i][j]+ "}";
       }
         }
       }
@@ -56,7 +56,23 @@ public class Demo{
     //return Integer.toString(x); Test to see if my code was able to count every value in array.
     return TwoDArray;
   }
-  
+
+
+    //HW10 Part2b
+    public static int[][] create2DArray(int rows, int cols, int maxValue ){
+      int[][] Array2 = new int[rows][cols];
+      int x = (int) Math.random()* maxValue;
+
+      for(int i=0; i<rows; i++) {
+        for(int j=0; j<cols; j++) {
+          Array2[i][j] = x;
+        }
+      }
+      return Array2;
+    }
+
+
+
   public static void main(String args[]){
     // HW 10 Part 2a
     int[][] arr= {
@@ -68,6 +84,11 @@ public class Demo{
 
     System.out.println (arrayDeepToString(arr));
     System.out.println (arrayDeepToString(arr).replace("}, ","},\n "));
+
+
+    //HW10 Part2b
+    System.out.println (arrayDeepToString(create2DArray(5,4,4)));
+
 
     //HW 9
     if (args.length == 0){
