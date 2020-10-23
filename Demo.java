@@ -61,10 +61,10 @@ public class Demo{
     //HW10 Part2b
     public static int[][] create2DArray(int rows, int cols, int maxValue ){
       int[][] Array2 = new int[rows][cols];
-      int x = (int) Math.random()* maxValue;
 
       for(int i=0; i<rows; i++) {
         for(int j=0; j<cols; j++) {
+          int x = (int )(Math.random() * (maxValue+1));
           Array2[i][j] = x;
         }
       }
@@ -84,7 +84,7 @@ public class Demo{
 
     System.out.println (arrayDeepToString(arr));
     System.out.println (arrayDeepToString(arr).replace("}, ","},\n "));
-
+    System.out.println ((int )(Math.random() * 4));
 
     //HW10 Part2b
     System.out.println (arrayDeepToString(create2DArray(5,4,4)));
