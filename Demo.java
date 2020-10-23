@@ -10,7 +10,7 @@ public class Demo{
     }
   }
 
-//HW 10
+//HW 10  Part2a
   public static String arrToString(int[] arr){
     String OneDArray = "{";
     if (arr.length == 0){
@@ -42,7 +42,7 @@ public class Demo{
         }
         if (j==arr[i].length-1){
           if (i !=arr.length-1){
-          TwoDArray=TwoDArray+ arr[i][j]+ "},";
+          TwoDArray=TwoDArray+ arr[i][j]+ "}, ";
         }
         else{
         TwoDArray=TwoDArray+ "}";
@@ -56,10 +56,9 @@ public class Demo{
     //return Integer.toString(x); Test to see if my code was able to count every value in array.
     return TwoDArray;
   }
-
-
+  
   public static void main(String args[]){
-    // HW 10
+    // HW 10 Part 2a
     int[][] arr= {
        {1, 2, 3},
        {4, 5, 6},
@@ -68,6 +67,7 @@ public class Demo{
     };
 
     System.out.println (arrayDeepToString(arr));
+    System.out.println (arrayDeepToString(arr).replace("}, ","},\n "));
 
     //HW 9
     if (args.length == 0){
