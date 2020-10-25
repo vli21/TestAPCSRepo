@@ -29,32 +29,19 @@ public class Demo{
   }
 
 
-  public static String arrayDeepToString(int[][]arr){
-    //int x=0; Test to see if my code was able to count every value in array.
-    String TwoDArray= "{";
-    for (int i=0; i< arr.length; i++ ){
-      for (int j=0;j<arr[i].length;j++){
-        //x+=1; Test to see if my code was able to count every value in array.
-        if (j==0){
-          TwoDArray=TwoDArray+ "{"+ arr[i][j]+",";
-        }
-        if (j!=0 && j!=arr[i].length-1){
-          TwoDArray=TwoDArray+ arr[i][j] + ",";
-        }
-        if (j==arr[i].length-1){
-          if (i !=arr.length-1){
-          TwoDArray=TwoDArray+ arr[i][j]+ "}, ";
-        }
-        else{
-        TwoDArray=TwoDArray+arr[i][j]+ "}";
-      }
-        }
-      }
-      if (i==arr.length-1){
-        TwoDArray=TwoDArray+ "}";
-      }
+  public static String arrayDeepToString(int[][] arr){
+    String TwoDArray = "{";
+    if (arr.length == 0){
+      TwoDArray="{}";
     }
-    //return Integer.toString(x); Test to see if my code was able to count every value in array.
+    for (int i=0; i< arr.length; i++){
+      if (i==arr.length-1){
+        TwoDArray= TwoDArray+arrToString(arr[i])+"}";
+      }
+      else{
+      TwoDArray= TwoDArray+arrToString(arr[i])+", ";
+    }
+    }
     return TwoDArray;
   }
 
@@ -98,7 +85,8 @@ public class Demo{
 
     System.out.println (arrayDeepToString(arr));
     System.out.println (arrayDeepToString(arr).replace("}, ","},\n "));
-    //System.out.println ((int )(Math.random() * 4)); Testing to see if random function truly gave a random value
+    System.out.println ((int )(Math.random() * (5)));
+    //Testing to see if random function truly gave a random value
 
     //HW10 Part2b
     System.out.println (arrayDeepToString(create2DArray(5,4,4)).replace("}, ","},\n "));
